@@ -238,6 +238,10 @@ button {
   padding: 72px 0;
 }
 
+#projects.section {
+  padding-top: 156px;
+}
+
 .hero {
   min-height: calc(100vh - 240px);
   display: flex;
@@ -903,6 +907,10 @@ button {
   .section {
     width: min(100% - 28px, 720px);
     padding: 70px 0;
+  }
+
+  #projects.section {
+    padding-top: 96px;
   }
 
   .hero {
