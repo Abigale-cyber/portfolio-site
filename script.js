@@ -31,7 +31,7 @@ const tools = [
     emoji: '💬',
     tag: 'Web App',
     description: '微信公众号自主排版工具，用 AI 辅助生成精美的公众号图文排版，告别手动调样式。',
-    href: 'https://github.com/Abigale/wechat-studio',
+    href: 'https://81.70.39.125:8443/wechat-studio/',
   },
   {
     title: 'PPT AI Layout',
