@@ -25,6 +25,32 @@ const portfolioProjects = [
   },
 ];
 
+const tools = [
+  {
+    title: 'WeChat Studio',
+    emoji: '💬',
+    tag: 'Web App',
+    description: '微信公众号自主排版工具，用 AI 辅助生成精美的公众号图文排版，告别手动调样式。',
+    href: 'https://github.com/Abigale/wechat-studio',
+  },
+  {
+    title: 'PPT AI Layout',
+    emoji: '📊',
+    tag: 'Web App',
+    description: 'AI 驱动的 PPT 自主排版工具，输入内容自动生成专业排版，快速产出高质量演示文稿。',
+    href: 'https://github.com/Abigale/ppt-ai-layout',
+  },
+  {
+    title: '更多工具开发中…',
+    emoji: '🚀',
+    tag: 'Coming Soon',
+    description: '持续探索 AI + 内容工具的更多可能性，敬请期待。',
+    href: 'https://github.com/Abigale',
+  },
+];
+
+const TOOLS_SHOW_COUNT = 3;
+
 const channels = [
   { name: '微信咨询', icon: 'message-circle', href: '#contact', qrImage: '', description: '适合项目合作、作品咨询和学习陪练沟通。' },
   { name: '微信公众号', icon: 'newspaper', href: '#contact', qrImage: '', description: '沉淀长文、项目复盘和系统化方法论。' },
@@ -58,6 +84,26 @@ function renderProjects() {
       </article>
     `;
   }).join('');
+}
+
+function renderTools() {
+  const list = document.querySelector('#toolsList');
+  if (!list) return;
+
+  const visibleTools = tools.slice(0, TOOLS_SHOW_COUNT);
+  list.innerHTML = visibleTools.map((tool) => `
+    <a class="tool-card app-card" href="${tool.href}" target="_blank" rel="noreferrer">
+      <span class="tool-card-emoji">${tool.emoji}</span>
+      <div class="tool-card-body">
+        <div class="tool-card-header">
+          <strong>${tool.title}</strong>
+          <span class="tool-card-tag">${tool.tag}</span>
+        </div>
+        <p>${tool.description}</p>
+      </div>
+      <span class="tool-card-arrow">${iconMarkup('arrow-right')}</span>
+    </a>
+  `).join('');
 }
 
 function renderChannels() {
@@ -102,6 +148,7 @@ function bindInteractions() {
 }
 
 renderProjects();
+renderTools();
 renderChannels();
 bindInteractions();
 window.addEventListener('load', () => window.lucide?.createIcons());
